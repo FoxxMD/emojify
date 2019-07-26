@@ -14,13 +14,49 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  /*justify-content: center;*/
   font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 0 5% 0 5%;
+}
+
+.content {
+  justify-content: normal;
+}
+
+.footer {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: white;
+}
+a:visited {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.rawText {
+  width: 100%;
+  /*max-width: 800px;*/
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 5px;
+}
+
+.convertedText {
+  margin-top: 20px;
+  width:100%;
+  /*max-width:800px;*/
+  border-radius:10px;
+  transition-duration: 0.1s;
+  cursor:pointer;
+}
+
+.convertedText:hover {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 @keyframes App-logo-spin {
@@ -30,4 +66,49 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 100px; /* Set a default minimum width */
+  margin-right: 50px; /* Divide value of min-width by 2 */
+  background-color: rgba(95, 104, 123, 0.9);
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  right: 0;
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }
