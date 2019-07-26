@@ -112,7 +112,73 @@ export default [
         "emoji": "😡",
         "name": "rage",
         "shortcode": ":rage:"
-    }, {"emoji": "😃", "name": "smiley", "shortcode": ":smiley:"}, {
+    },
+    {
+        "emoji": "🍳",
+        "name": "cooking",
+        "shortcode": ":cooking:"
+    },
+    {
+        "emoji": "😊",
+        "name": "relaxed",
+        "shortcode": ":relaxed:"
+    },
+    {
+        "emoji": "🌰",
+        "name": "chestnut",
+        "shortcode": ":chestnut:"
+    },
+    {
+        "emoji": "🥒",
+        "name": "cucumber",
+        "shortcode": ":cucumber:"
+    },
+    {
+        "emoji": "🗡️",
+        "name": "dagger",
+        "shortcode": ":dagger:"
+    },
+    {
+        "emoji": "🤙",
+        "name": "call_me_hand",
+        "shortcode": ":call_me_hand:"
+    },
+    {
+        "emoji": "🤠",
+        "name": "cowboy",
+        "shortcode": ":cowboy:"
+    },
+    {
+        "emoji": "🤡",
+        "name": "clown",
+        "shortcode": ":clown:"
+    },
+    {
+        "emoji": "🕺",
+        "name": "man_dancing",
+        "shortcode": ":man_dancing:"
+    },
+    {
+        "emoji": "💃",
+        "name": "woman_dancing",
+        "shortcode": ":woman_dancing:"
+    },
+    {
+        "emoji": "🚗",
+        "name": "red_car",
+        "shortcode": ":red_car:"
+    },
+    {
+        "emoji": "🗣️",
+        "name": "speaking_head",
+        "shortcode": ":speaking_head:"
+    },
+    {
+        "emoji": "💯️",
+        "name": "100",
+        "shortcode": ":100:"
+    },
+    {"emoji": "😃", "name": "smiley", "shortcode": ":smiley:"}, {
         "emoji": "🎉",
         "name": "tada",
         "shortcode": ":tada:"
