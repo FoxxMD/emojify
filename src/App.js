@@ -1,24 +1,23 @@
 import React from 'react';
 import Textarea from 'react-textarea-autosize';
 import {CopyToClipboard} from "react-copy-to-clipboard";
+import EmojiConvertor from 'emoji-js';
 import './App.css';
+import extraShortcodeAliases from "./extraShortcodeAliases";
 // https://gist.github.com/oliveratgithub/0bf11a9aff0d6da7b46f1490f86a71eb
 import isMobile from './mobileDetection';
 import Checkbox from "./Checkbox";
-import emojis from './emojisShort';
 
-const shortcodeRegex = new RegExp(/:\w*?:/, 'g');
-const aggroRegex = new RegExp(/\w+|:\w+:/, 'g');
-const colonReg = new RegExp(/:/, 'g');
+// emoji shortcode regex, could be useful in the future but not using right now
+// https://gist.github.com/ozrabal/4d4e0a94cf2fb27a74149c029c095fe9
 
-const matchEmoji = (shortCode) => {
-    const lowerMatch = shortCode.toLowerCase();
-    const val = emojis.find(val => lowerMatch === val.shortcode || lowerMatch === val.shortcode.replace(colonReg, ''));
-    if (val !== undefined) {
-        return val;
-    }
-    return undefined;
-};
+//const shortcodeRegex = new RegExp(/:[\w-]*?:/, 'g');
+const aggroRegex = new RegExp(/\w+|:[\w-]+:/, 'g');
+//const colonReg = new RegExp(/:/, 'g');
+
+const emojiConvertor = new EmojiConvertor();
+emojiConvertor.addAliases(extraShortcodeAliases);
+emojiConvertor.init_colons();
 
 class App extends React.Component {
 
@@ -35,15 +34,18 @@ class App extends React.Component {
     };
 
     convertText = (rawText, convertAggro = false) => {
-        const regex = convertAggro ? aggroRegex : shortcodeRegex;
-
-        return rawText.replace(regex, (match) => {
-            const foundMatch = matchEmoji(match);
-            if (foundMatch !== undefined) {
-                return foundMatch.emoji;
-            }
-            return match;
-        });
+        const convertedRaw = emojiConvertor.replace_colons(rawText);
+        if (convertAggro) {
+            return convertedRaw.replace(aggroRegex, (match) => {
+                if (match.length > 0 && (match.charAt(0) !== ':' && match.charAt(match.length - 1) !== ':')) {
+                    // uh oh getting private
+                    const val = emojiConvertor.map.colons[match];
+                    return val ? emojiConvertor.replacement(val, match) : match;
+                }
+                return match;
+            })
+        }
+        return convertedRaw;
     };
 
     convertOnInput = (e) => {
