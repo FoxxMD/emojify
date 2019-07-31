@@ -65,7 +65,7 @@ a:visited {
 }
 
 .checkbox {
-  max-width:205px;
+  text-align: left;
 }
 
 @keyframes App-logo-spin {
