@@ -18,7 +18,7 @@ Enter or paste text into the textarea input. Converted text will appear below th
 
 #### Aliases
 
-Shortcodes that are not included in emoji-js can be added to [extraShortcodeAliases.js](https://github.com/FoxxMD/discord-emoji-shortcode-converter/blob/master/src/extraShortcodeAliases.js)
+Shortcodes that are not included in emoji-js can be added to [extraShortcodeAliases.js](https://github.com/FoxxMD/emojify/blob/master/src/extraShortcodeAliases.js)
 
 ## Contributing
 
@@ -26,4 +26,4 @@ Make a PR for some extra functionality and I will happily accept it :)
 
 ## License
 
-This package is licensed under the [MIT license](https://github.com/FoxxMD/discord-emoji-shortcode-converter/blob/master/LICENSE).
+This package is licensed under the [MIT license](https://github.com/FoxxMD/emojify/blob/master/LICENSE).

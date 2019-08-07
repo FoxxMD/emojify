@@ -101,7 +101,7 @@ class App extends React.Component {
                             <div className="convertedText">{this.state.convertedValue}</div>
                         </CopyToClipboard>
                     </div>
-                    <div className="footer">Made hastily by <a href="https://matthewfoxx.com">Matthew Foxx</a></div>
+                    <div className="footer">Made hastily by <a href="https://matthewfoxx.com">Matthew Foxx</a>. Source available at <a href="https://github.com/FoxxMD/emojify">Github</a></div>
                 </header>
                 <div id="snackbar" className={this.state.copyClass}>Copied!</div>
             </div>
