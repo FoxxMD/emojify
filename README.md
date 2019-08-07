@@ -20,6 +20,12 @@ Enter or paste text into the textarea input. Converted text will appear below th
 
 Shortcodes that are not included in emoji-js can be added to [extraShortcodeAliases.js](https://github.com/FoxxMD/emojify/blob/master/src/extraShortcodeAliases.js)
 
+How To:
+
+1. Determine the discord shortcode EX `:motorcycle:`
+2. Search [emoji-js source](https://github.com/iamcal/js-emoji/blob/master/lib/emoji.js#L643) data for an equivalent name EX find `racing_motorcycle`, under the key `1f3cd-fe0f`
+3. Add the shortcode with the emoji key from emoji-js to `extraShortcodeAliases.js` EX `'motorcycle':'1f3cd-fe0f'`
+
 ## Contributing
 
 Make a PR for some extra functionality and I will happily accept it :)
