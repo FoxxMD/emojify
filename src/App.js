@@ -17,7 +17,8 @@ const aggroRegex = new RegExp(/\w+|:[\w-]+:/, 'g');
 
 const emojiConvertor = new EmojiConvertor();
 emojiConvertor.addAliases(extraShortcodeAliases);
-emojiConvertor.init_colons();
+emojiConvertor.replace_mode = 'unified';
+emojiConvertor.allow_native = true;
 
 class App extends React.Component {
 
